@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('@@html/head.html', { "title": "Evadesign | Дизайн интерьера" })
+
+<body>
+	@@include('@@html/header.html')
+	<main class="main-container">
+
+		@@include('@@html/components/hero.html')
+		@@include('@@html/components/why.html')
+
+
+		@@include('@@html/components/about.html')
+		@@include('@@html/components/services.html')
+		@@include('@@html/components/team.html')
+		@@include('@@html/components/portfolio.html')
+		@@include('@@html/components/testimonials.html')
+		@@include('@@html/components/contact.html')
+
+		<section class="sign">
+			<div class="sign__container" data-scroll data-scroll-speed="0.1">
+				<div class="sign__title" data-scroll data-scroll-speed="0.25">С любовью <br>Evadesign</div>
+			</div>
+		</section>
+
+
+	</main>
+	@@include('@@html/footer.html')
+
+	<!-- @@include('@@html/components/mixins/svgicon.html', {"name": "icon-name", "mod": "my-mod"}) -->
+
+	<!-- @@include('@@html/components/mixins/svgicon.html', {"name": "new"}) -->
+
+
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>

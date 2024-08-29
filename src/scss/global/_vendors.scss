@@ -1,0 +1,46 @@
+/* ------------------------------ lightgallery ------------------------------ */
+
+$lg-path-fonts: '../fonts';
+$lg-path-images: '@img';
+
+@use '~lightgallery/scss/lightgallery-bundle' with (
+	$lg-path-fonts: $lg-path-fonts,
+	$lg-path-images: $lg-path-images
+);
+
+/* ----------------------------------- aos ---------------------------------- */
+@use '~aos/dist/aos.css';
+
+/* --------------------------------- swiper --------------------------------- */
+@use '~swiper/swiper-bundle';
+
+/* --------------------------------- burger --------------------------------- */
+@use '~sass-burger/burger' as *;
+@forward '~sass-burger/burger'; // чтобы использовать миксины
+
+/* ------------------------------- locomotive ------------------------------- */
+html.lenis {
+	height: auto;
+}
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
+/* Only necessary with horizontal scrolling */
+html[data-scroll-orientation='horizontal'] {
+	body {
+		width: fit-content;
+	}
+	[data-scroll-container] {
+		display: flex;
+	}
+}

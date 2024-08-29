@@ -1,0 +1,95 @@
+﻿/* _team */
+@use 'global' as *;
+
+$gutter: $container-padding-x;
+
+.team {
+	padding: 24px 0;
+
+	&__container.container {
+		// @include flex-grid($gutter);
+	}
+	&__main-wrap {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+
+		@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+			display: block;
+			width: auto;
+		}
+	}
+	&__text-wrap {
+		@include flex-col(6);
+		padding-left: toRem(35);
+		padding-right: toRem(97);
+
+		@include media-breakpoint-down(xl, $breakpoints: $grid-breakpoints) {
+			padding-left: toRem(15);
+			padding-right: toRem(30);
+		}
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			padding-left: toRem(10);
+			padding-right: toRem(10);
+		}
+
+		@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+			display: block;
+			width: auto;
+		}
+	}
+	&__title {
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			font-size: 2.5rem;
+		}
+	}
+	&__subtitle.section-subtitle {
+	}
+	&__text {
+		margin-top: 15px;
+		margin-bottom: toRem(45);
+	}
+	&__btn.btn {
+		@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+			display: table;
+			margin: 0 auto;
+			margin-bottom: 40px;
+		}
+	}
+	&__img-wrap {
+		position: relative;
+		@include flex-col(6);
+		padding-left: 10px;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			align-self: center;
+		}
+
+		@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+			display: block;
+			width: auto;
+		}
+	}
+	&__img-heart {
+		position: absolute;
+		right: 20px;
+		bottom: -100px;
+		max-width: 40%;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			bottom: -50px;
+		}
+	}
+	&__img {
+		display: block;
+		max-width: 100%;
+	}
+}
+.container {
+}
+.section-subtitle {
+}
+.btn {
+}

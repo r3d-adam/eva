@@ -1,0 +1,11 @@
+﻿.parallax {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1s;
+
+	&--active {
+		visibility: visible;
+		opacity: 1;
+		// transition: opacity 0.3s;
+	}
+}

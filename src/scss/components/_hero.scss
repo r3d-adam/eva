@@ -1,0 +1,94 @@
+﻿/* _hero */
+@use 'global' as *;
+
+$header-height: 90px;
+.main-container {
+	position: relative;
+	padding-top: $header-height;
+	overflow: hidden;
+}
+
+.hero {
+	$extend: 20;
+	padding: 70px 0 20px;
+	min-height: calc(100vh - $header-height);
+	// height: 500px;
+	$bg-image-1: url('@img/hero-bg.jpg');
+	$bg-image-2: linear-gradient(315deg, rgba(0, 0, 0, 0.75) 0%, rgba(34, 34, 34, 0.41) 100%);
+	background: $bg-image-2, $bg-image-1;
+	background-position: center center, center 0;
+	// background-size: auto 120%;
+	background-size: cover;
+	// background-size: calc(100% + (100% - 100vw) * var(--speed, 0));
+	text-align: center;
+	background-repeat: no-repeat;
+
+	// transition: background 0.1s;
+
+	&__container {
+		min-height: 667px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		@include text-h1;
+		margin-bottom: 42px;
+	}
+	&__title-icon {
+		display: inline-block;
+		width: 66px;
+		height: 66px;
+		margin-bottom: 5px;
+		animation: float ease-in-out 1.5s infinite alternate;
+	}
+	&__descr {
+		@include text-hero-descr;
+		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+		color: #d9c6ba;
+		max-width: 600px;
+		text-transform: uppercase;
+		background: linear-gradient(270deg, #c7ac9a 0%, #d9c6ba 62.81%, #fff 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 47px;
+	}
+	&__btn {
+	}
+}
+.container {
+}
+.btn {
+	&--light {
+	}
+}
+.hero {
+	&__container {
+	}
+	&__title {
+	}
+	&__title-icon {
+	}
+	&__descr {
+	}
+	&__btn {
+	}
+}
+.container {
+}
+.btn {
+	&--light {
+	}
+}
+
+// half time state
+@keyframes float {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-10px);
+	}
+}

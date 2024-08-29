@@ -1,0 +1,46 @@
+@use 'global' as *;
+@use 'sass:color';
+
+.btn {
+	display: inline-block;
+	border-radius: 10px;
+	font-family: Bahnschrift;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	background-color: $brown-grey;
+	padding: 15px 26px;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+	font-family: Bahnschrift;
+	font-size: 13px;
+	color: #fff;
+	transition: 0.3s ease;
+	transform: translateY(0);
+
+	&:hover,
+	&:active {
+		color: color.scale(#fff, $lightness: 100%);
+		background-color: color.scale($brown-grey, $lightness: -40%);
+		transform: translateY(-5px);
+	}
+
+	&--light {
+		font-size: 14px;
+		padding: 14px 11px 13px;
+		border: solid 0.5px $black-two;
+		color: $brown-grey;
+		background-color: $beige;
+		font-weight: 400;
+
+		&:hover,
+		&:active {
+			color: color.scale($brown-grey, $lightness: 100%);
+			background-color: color.scale($beige, $lightness: -40%);
+		}
+	}
+
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
+}

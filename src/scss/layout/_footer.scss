@@ -1,0 +1,11 @@
+@use 'global' as *;
+
+.footer {
+	background-color: $beige;
+	padding: 38px;
+	&__copyright {
+		text-align: center;
+		color: $bland;
+		@include Text-Style-11;
+	}
+}

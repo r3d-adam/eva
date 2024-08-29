@@ -1,0 +1,122 @@
+﻿/* _services */
+@use 'global' as *;
+
+.services {
+	padding: 30px 0;
+	&__container.container {
+		@include padding-x(0);
+	}
+	&__title {
+	}
+	.dots {
+		margin-bottom: toRem(90);
+	}
+	&__item-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		margin-bottom: toRem(56);
+	}
+	&__item {
+		$size: 350px;
+		max-width: 100%;
+		@include margin-x(10px);
+		width: $size;
+		height: $size;
+		max-width: 100%;
+		@include box-center;
+		justify-content: space-between;
+		flex-flow: column nowrap;
+		color: #fff;
+		font-size: 16px;
+		text-align: center;
+		font-family: Bahnschrift;
+		background: url('@img/services-item-bg.png') center no-repeat;
+		background-size: cover;
+		@include padding-x(33px);
+		padding-top: 90px;
+		padding-bottom: 67px;
+		margin-bottom: 10px;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			@include margin-x(5px);
+			@include padding-x(toRem(28));
+			padding-top: toRem(90);
+			padding-bottom: toRem(67);
+		}
+	}
+	&__item-title {
+		font-weight: bold;
+		color: #f1f1f1;
+		text-transform: uppercase;
+		// margin-bottom: 48px;
+	}
+	&__item-text {
+		font-weight: 300;
+		// margin-bottom: 27px;
+		color: #fff;
+	}
+	&__item-btn {
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		z-index: 0;
+		padding: 4px;
+		cursor: pointer;
+		color: currentColor;
+
+		&:hover,
+		&:active {
+			color: currentColor;
+			text-decoration: none;
+
+			&::after {
+				right: -20px;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 3px;
+			height: 11px;
+			background-color: $pinkish-grey;
+			right: 100%;
+			z-index: -1;
+			transition: 0.2s;
+		}
+	}
+	&__stat-list {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		text-align: center;
+	}
+	&__stat-item {
+		text-align: center;
+	}
+	&__stat-num {
+		width: 160px;
+		font-family: BlackDiamond;
+		font-size: toRem(64);
+		font-weight: normal;
+		// text-align: left;
+		margin-left: 7px;
+		color: $brown-grey;
+	}
+	&__stat-title {
+		color: #504f4f;
+		text-align: center;
+		font-family: Bahnschrift;
+		font-size: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+}
+.container {
+}
+.section-title {
+}

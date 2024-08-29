@@ -1,0 +1,16 @@
+﻿@use 'global' as *;
+
+.dots {
+	font-family: Montserrat;
+	font-size: 32px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	text-align: left;
+	color: $pinkish-grey;
+	white-space: nowrap;
+	display: table;
+	margin: -15px auto 4px;
+}

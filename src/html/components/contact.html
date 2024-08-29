@@ -1,0 +1,40 @@
+<!-- contact  -->
+<section id="contact" class="contact">
+	<div class="contact__container container">
+		<h2 class="contact__title" data-aos="fade-down" data-aos-offset="0" data-aos-duration="900">Рады вам ответить
+		</h2>
+		<div class="contact__text" data-aos="fade-down" data-aos-duration="900" data-aos-offset="0">
+			Создаём эксклюзивные дизайн-проекты квартир, ориентируясь на&nbsp;вашу индивидуальность!
+		</div>
+		<form class="contact__form form" data-aos="fade-down" data-aos-duration="900" data-aos-offset="0">
+
+			<input type="text" name="name" class="form__input form__input--text" placeholder="Ваше имя*" required />
+
+
+			<input type="tel" name="phone" class="form__input form__input--text" placeholder="Ваш телефон*" required />
+
+			<button class="form__btn btn">связаться с нами</button>
+		</form>
+
+		<div class="social">
+			<a href="#" class="social__item"><i class="social__icon social__icon--inst">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "inst"})
+				</i>Evadesignkzn@mail.ru</a>
+			<a href="#" class="social__item"><i
+					class="social__icon social__icon--vk">@@include('@@html/components/mixins/svgicon.html', {"name":
+					"vk"})</i>Evadesignkzn@mail.ru</a>
+			<a href="mailto:Evadesignkzn@mail.ru" class="social__item"><i class="social__icon social__icon--mail">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "mail"})
+				</i>Evadesignkzn@mail.ru</a>
+			<a href="#" class="social__item"><i class="social__icon social__icon--geo">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "geo"})
+				</i>
+				<address>г. Казань, ул. Азата Аббасова , д. 11</address>
+			</a>
+		</div>
+	</div>
+	<div class="contact__map-wrap">
+		<div class="contact__map" id="map"></div>
+	</div>
+</section>
+<!-- END contact  -->

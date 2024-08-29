@@ -1,0 +1,71 @@
+<!-- about  -->
+<section id="about" class="about">
+	<div class="about__container container">
+		<img data-scroll data-scroll-speed="0.3" class="background-img-item background-img-item--1"
+			src="@img/bg-parts/1.svg" alt="">
+		<img data-scroll data-scroll-speed="0.15" class="background-img-item background-img-item--2"
+			src="@img/bg-parts/2.svg" alt="">
+
+		<img data-scroll data-scroll-speed="0.08" class="background-img-item background-img-item--3"
+			src="@img/bg-parts/3.svg" alt="">
+		<h2 class="about__title section-title">[ О Компании ]</h2>
+		<div class="about__subtitle section-subtitle">что мы предлагаем</div>
+		<div class="about__item-list">
+			<div class="about__item about__item--active">
+				<div class="about__item-num-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-num-1" })
+				</div>
+				<div class="about__icon-wrap">
+					<div class="about__icon about__icon--1"></div>
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-1"})
+				</div>
+				<h3 class="about__item-title">Заключение договора</h3>
+			</div>
+			<div class="about__item">
+				<div class="about__item-num-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-num-2"})
+				</div>
+				<div class="about__icon-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-2"})
+				</div>
+				<h3 class="about__item-title">Полная смета</h3>
+			</div>
+			<div class="about__item">
+				<div class="about__item-num-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-num-3"})
+				</div>
+				<div class="about__icon-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-3"})
+				</div>
+				<h3 class="about__item-title">Создание проекта</h3>
+			</div>
+			<div class="about__item">
+				<div class="about__item-num-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-num-4"})
+				</div>
+				<div class="about__icon-wrap">
+					@@include('@@html/components/mixins/svgicon.html', {"name": "about-4"})
+				</div>
+				<h3 class="about__item-title">Авторский надзор</h3>
+			</div>
+		</div>
+		<div class="about__progress" data-scroll data-scroll-event-progress="progressEvent"
+			data-scroll-offset="10%, 30%">
+			<div class="about__progress-inner"></div>
+		</div>
+		<div class="about__text">Подписание договора в&nbsp;нашей студии. В&nbsp;договоре учтены и&nbsp;прописаны все
+			возможные моменты. Гарантия для клиента.
+		</div>
+		<a href="#portfolio" class="about__btn btn js-scroll-to">Посмотреть проекты</a>
+
+	</div>
+
+	<img data-scroll data-scroll-speed="0.3" class="background-img-item background-img-item--4"
+		src="@img/bg-parts/4.svg" alt="">
+
+
+
+	<img data-scroll class="background-img-item background-img-item--5" src="@img/bg-parts/5.svg" alt=""
+		data-scroll-speed="0.1">
+</section>
+<!-- END about  -->

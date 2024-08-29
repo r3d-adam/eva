@@ -1,0 +1,143 @@
+@use './mixins/basic' as *;
+
+/* здесь используйте глобальные переменные */
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+// с учетом padding-x, т.е. + $gap  или  + 2 * $container-padding-x
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1260px,
+);
+
+// половина gap (gap = отступ между контентом col)
+$container-padding-x: 5px;
+
+@use 'breakpoints/containers' with (
+	$grid-breakpoints: $grid-breakpoints,
+	$container-max-widths: $container-max-widths,
+	$container-padding-x: $container-padding-x
+);
+
+@forward 'breakpoints/containers';
+@forward 'breakpoints/breakpoints';
+
+/* -------------------------------------------------------------------------- */
+/*                                    ЦВЕТА                                   */
+/* -------------------------------------------------------------------------- */
+$lllyx: #424242;
+$beige: #f9f2eb;
+$brownish-grey: #876f65;
+$black: #1d1d1d;
+$brown-grey: #84786c;
+$pinkish-grey: #c3b7ab;
+$greyish-brown: #474747;
+$bland: #b7aa9d;
+$camo-green: #462719;
+$black-two: #000;
+/* -------------------------------------------------------------------------- */
+/*                                   ШРИФТЫ                                   */
+/* -------------------------------------------------------------------------- */
+// replace pattern
+// font-size: (\d+)px;
+// font-size: toRem($1);
+
+@mixin Text-Style-10 {
+	font-family: BlackDiamond;
+	$fz: toRem(128);
+	@debug $fz;
+	font-size: $fz;
+	text-align: center;
+	color: $brown-grey;
+}
+@mixin Text-Style-7 {
+	font-family: BlackDiamond;
+	font-size: toRem(96);
+	text-align: center;
+	color: $brown-grey;
+}
+@mixin text-h1 {
+	font-family: BlackDiamond;
+	font-size: toRem(64);
+	line-height: 1.26;
+	color: $beige;
+}
+@mixin why-list {
+	font-family: BlackDiamond;
+	font-size: toRem(48);
+	color: $brown-grey;
+}
+@mixin text-section-h2 {
+	font-family: BlackDiamond;
+	font-size: toRem(48);
+	text-align: center;
+	color: $brown-grey;
+}
+@mixin Text-Style-13 {
+	font-family: BlackDiamond;
+	font-size: toRem(48);
+	line-height: 1.26;
+	text-align: center;
+	color: $beige;
+}
+@mixin text-section-subtitle {
+	font-family: Bahnschrift;
+	font-size: toRem(36);
+	color: $black;
+}
+@mixin text-menu-active {
+	font-family: BlackDiamond;
+	font-size: toRem(30);
+	color: $camo-green;
+}
+@mixin text-menu {
+	font-family: BlackDiamond;
+	font-size: toRem(24);
+	color: $brownish-grey;
+}
+@mixin Text-Style-5 {
+	font-family: Bahnschrift;
+	font-size: toRem(16);
+	text-align: center;
+}
+@mixin Text-Style-11 {
+	font-family: Montserrat;
+	font-size: toRem(16);
+	text-align: center;
+}
+@mixin text-about {
+	font-family: Bahnschrift;
+	font-size: toRem(15);
+	text-align: center;
+	color: $black-two;
+}
+@mixin Text-Style-6 {
+	font-family: Bahnschrift;
+	font-size: toRem(15);
+	color: $greyish-brown;
+}
+@mixin text-p {
+	font-family: Bahnschrift;
+	font-size: toRem(15);
+	font-weight: 300;
+	line-height: 1.42;
+	text-align: justify;
+	color: $black;
+}
+@mixin text-hero-descr {
+	font-family: Montserrat;
+	font-size: toRem(14);
+	font-weight: 500;
+	line-height: 1.79;
+	text-align: center;
+}

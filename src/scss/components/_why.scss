@@ -1,0 +1,100 @@
+﻿/* _why */
+@use 'global' as *;
+
+.why {
+	padding-top: toRem(114);
+	padding-bottom: 30px;
+
+	&__container {
+		display: flex;
+		// @include padding-x(90px);
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			// display: block;
+			flex-direction: column;
+		}
+	}
+	&__list-wrap {
+		@include flex-static(55%);
+		padding-left: 15px;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			width: auto;
+			margin-bottom: toRem(30);
+			order: 1;
+		}
+	}
+	&__list {
+		text-align: left;
+		padding-left: 82px;
+		@include why-list;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			padding-left: 0;
+		}
+	}
+	&__list-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: toRem(34);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__item-num {
+		$size: 126px;
+		background-color: $beige;
+		border-radius: 50%;
+		width: $size;
+		height: $size;
+		@include box-center();
+		margin-right: 27px;
+		flex-shrink: 0;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			$size: 100px;
+			width: $size;
+			height: $size;
+		}
+	}
+	&__text-wrap {
+		@include flex-static(45%);
+		padding-right: 80px;
+		padding-left: 15px;
+		padding-top: 5px;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			width: auto;
+			@include padding-x(15px);
+		}
+	}
+	&__title.section-subtitle {
+		max-width: 300px;
+		text-align: left;
+		display: block;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&__text {
+		margin-bottom: toRem(68);
+	}
+	&__btn {
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			margin: 0 auto;
+			margin-bottom: toRem(44);
+			display: table;
+		}
+	}
+	.dots {
+		margin-left: 0;
+
+		@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

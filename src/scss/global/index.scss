@@ -1,0 +1,26 @@
+@use 'reboot'; // or normalize
+@use 'fonts';
+@use 'vendors';
+// @use 'breakpoints/breakpoints';
+// @use 'bootstrap';
+
+// @use 'override';
+@use 'global-styles';
+@use 'variables';
+@use 'helpers';
+@use 'mixins';
+
+/* -------------------------------------------------------------------------- */
+
+// export
+@forward 'reboot'; // or normalize
+@forward 'fonts';
+@forward 'vendors';
+
+// @forward 'breakpoints/breakpoints';
+// @forward 'override';
+@forward 'helpers';
+
+@forward 'global-styles';
+@forward 'variables';
+@forward 'mixins';

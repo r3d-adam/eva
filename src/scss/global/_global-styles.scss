@@ -1,0 +1,72 @@
+@use 'variables' as *;
+@use '../global/breakpoints';
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+
+@use 'mixins';
+
+:root,
+html {
+	overflow-x: hidden;
+	// font-size: 62.5%;
+	font-size: 16px;
+	@debug $grid-breakpoints;
+	@include media-breakpoint-down(lg, $breakpoints: $grid-breakpoints) {
+		font-size: 14px;
+	}
+	@include media-breakpoint-down(md, $breakpoints: $grid-breakpoints) {
+		font-size: 12px;
+	}
+	@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+		font-size: 11px;
+	}
+}
+
+body {
+	font-size: 1.6rem;
+	line-height: 1.4;
+}
+
+* {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+h2 {
+	@include text-section-h2;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+body {
+	/* ПУТЬ К КАРТИНКАМ  @img */
+	// background-image: url('@img/logo.png') 0 0 no-repeat;
+	/* ПОКАЗ ТЕКУЩЕГО breakpoint */
+	// @include show-mq($grid-breakpoints);
+
+	/* snippet: mq === MEDIA Qs (up, down, between, only) */
+	// @include media-breakpoint-up(sm, $breakpoints: $grid-breakpoints) {
+	// }
+
+	@include text-p;
+	// min-height: 2000px;
+}
+
+p {
+	@include text-p;
+}
+
+address {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
+}

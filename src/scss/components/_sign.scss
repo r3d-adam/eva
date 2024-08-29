@@ -1,0 +1,20 @@
+@use 'global' as *;
+
+.sign {
+	&__container {
+		min-height: toRem(740);
+		background: url('@img/bottom-hearts.png') center center no-repeat;
+		display: flex;
+		// flex-direction: column;
+		@include box-center;
+
+		@include media-breakpoint-down(md, $breakpoints: $grid-breakpoints) {
+			background-size: 100%;
+		}
+	}
+	&__title {
+		@include Text-Style-10;
+		// margin: 0 auto;
+		line-height: 1.1;
+	}
+}
