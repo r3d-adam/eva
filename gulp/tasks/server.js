@@ -1,14 +1,24 @@
 import * as nodePath from 'path';
+import fs from 'fs';
+
 /* global app */
 
 export const server = () => {
+	let browserLnk = 'H:\\_w\\custom_scripts\\chrome_incognito.lnk';
+
+	if (!fs.existsSync(browserLnk)) {
+		browserLnk = 'default';
+	}
+
+	// console.log('browserLnk', browserLnk);
+
 	let options = {
 		server: {
 			baseDir: `${app.path.build.html}`,
 		},
 		notify: false,
 		port: 3000,
-		browser: 'J:\\_w\\custom_scripts\\chrome_incognito.lnk',
+		browser: browserLnk,
 	};
 
 	const getLocalProxy = () => {
@@ -43,7 +53,7 @@ export const server = () => {
 			notify: false,
 			port: 80, // default local server port
 			proxy: localProxy + '/',
-			browser: 'J:\\_w\\custom_scripts\\chrome_incognito.lnk',
+			browser: browserLnk,
 		};
 	}
 

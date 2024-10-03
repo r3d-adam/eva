@@ -17,17 +17,21 @@
 	background: transparent;
 	border: 0;
 	$white: $bland;
+	display: flex;
+	align-items: center;
 
 	@include media-breakpoint-up(xl, $breakpoints: $grid-breakpoints) {
 		display: none;
 	}
 
 	&__line {
-		left: 50%;
-		position: absolute;
-		top: 50%;
-		margin-left: -15px;
-		margin-top: -1.5px;
+		position: relative;
+		margin: 0 auto;
+		// left: 50%;
+		// position: absolute;
+		// top: 50%;
+		// margin-left: -15px;
+		// margin-top: -1.5px;
 		@include burger(30px, 3px, 6px, $white);
 		&--active {
 			@include burger-to-cross;

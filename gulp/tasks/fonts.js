@@ -5,9 +5,17 @@ import ttf2woff from 'gulp-ttf2woff';
 
 /* global app */
 
+export const copyWoff = () => {
+	return app.gulp
+		.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`, {
+			encoding: false,
+		})
+		.pipe(app.gulp.dest(`${app.path.build.fonts}`));
+};
+
 export const otfToTft = () => {
 	return app.gulp
-		.src(`${app.path.srcFolder}/fonts/*.otf`, { encoding: false, removeBOM: false })
+		.src(`${app.path.srcFolder}/fonts/*.otf`, { encoding: false })
 		.pipe(
 			app.plugins.plumber(
 				app.plugins.notify.onError({
@@ -28,7 +36,7 @@ export const ttfToWoff = () => {
 	// Ищем файлы шрифтов .ttf
 	return (
 		app.gulp
-			.src(`${app.path.srcFolder}/fonts/*.ttf`, { encoding: false, removeBOM: false })
+			.src(`${app.path.srcFolder}/fonts/*.ttf`, { encoding: false })
 			.pipe(
 				app.plugins.plumber(
 					app.plugins.notify.onError({
@@ -50,17 +58,16 @@ export const ttfToWoff = () => {
 				encoding: false,
 				removeBOM: false,
 			})
-			// Конвертируем в .woff2
+			// // Конвертируем в .woff2
 			.pipe(ttf2woff2())
-			// Выгружаем в папку с результатом
+			// // Выгружаем в папку с результатом
 			.pipe(app.gulp.dest(`${app.path.build.fonts}`))
-			// Ищем файлы шрифтов .woff и woff2
-			.pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`), {
-				encoding: false,
-				removeBOM: false,
-			})
-			// Выгружаем в папку с результатом
-			.pipe(app.gulp.dest(`${app.path.build.fonts}`))
+		// // Ищем файлы шрифтов .woff и woff2
+		// .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`), {
+		// 	encoding: false,
+		// })
+		// Выгружаем в папку с результатом
+		// .pipe(app.gulp.dest(`${app.path.build.fonts}`))
 	);
 };
 
@@ -121,6 +128,6 @@ export const fontsStyle = () => {
 		}
 	});
 
-	return app.gulp.src(`${app.path.srcFolder}`, { encoding: false, removeBOM: false });
+	return app.gulp.src(`${app.path.srcFolder}`, { encoding: false });
 	function cb() {}
 };

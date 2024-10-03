@@ -28,20 +28,24 @@ import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { img } from './gulp/tasks/img.js';
 import { svgSprite } from './gulp/tasks/svgSprite.js';
-import { otfToTft, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
+import { copyWoff, otfToTft, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
+import { prefixUrl } from './gulp/tasks/prefix-url.js';
+
 // import { purgecss } from './gulp/tasks/purgecss.js';
 // import { cssCopyAssets } from './gulp/tasks/cssCopyAssets.js';
 
 // fonts, скипаем при параметре --skip-fonts
 const fontTasks = [];
 // eslint-disable-next-line no-unused-expressions
-!app.shouldSkipFonts && fontTasks.push(gulp.series(otfToTft, ttfToWoff, fontsStyle));
+!app.shouldSkipFonts && fontTasks.push(gulp.series(otfToTft, ttfToWoff, copyWoff, fontsStyle));
 gulp.task('fonts', ...fontTasks);
 
 gulp.task('html', html);
 gulp.task('js', js);
+gulp.task('prefix-url', prefixUrl);
+
 gulp.task('scss', scss);
 // gulp.task('purgecss', purgecss);
 // gulp.task('cssCopyAssets', cssCopyAssets);

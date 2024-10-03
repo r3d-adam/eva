@@ -28,9 +28,15 @@
 	}
 	&__logo-wrap {
 		margin-right: 20px;
+
+		@include media-breakpoint-down(sm, $breakpoints: $grid-breakpoints) {
+			padding-right: 70px;
+			margin-right: auto;
+		}
 	}
 	&__logo {
 		max-width: 220px;
+		width: 100%;
 	}
 
 	// @include media-breakpoint-up(lg, $breakpoints: $grid-breakpoints) {

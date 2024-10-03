@@ -4,13 +4,16 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"type": "module",
+	"homepage": "./",
 	"scripts": {
 		"dev": "gulp",
 		"dev-nofonts": "gulp --skip-fonts",
 		"build": "gulp build --build",
 		"zip": "gulp deployZip --build",
 		"ftp": "gulp deployFTP --build",
-		"svgSprite": "gulp svgSprite"
+		"svgSprite": "gulp svgSprite",
+		"predeploy": "npm run build && gulp prefix-url",
+		"deploy": "gh-pages -d dist"
 	},
 	"author": "",
 	"license": "ISC",
@@ -26,6 +29,7 @@
 		"eslint": "^8.2.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.29.1",
+		"gh-pages": "^6.1.1",
 		"globals": "^15.9.0",
 		"gulp": "5.0",
 		"gulp-autoprefixer": "latest",
@@ -49,6 +53,7 @@
 		"gulp-ttf-to-woff": "1.0.3",
 		"gulp-ttf2woff": "^2.0.0",
 		"gulp-ttf2woff2": "4.0.1",
+		"gulp-url-prefixer": "^1.0.2",
 		"gulp-util": "latest",
 		"gulp-version-number": "latest",
 		"gulp-webp": "latest",
